@@ -116,7 +116,7 @@ os.makedirs(DETECTED_FOLDER, exist_ok=True)
 # Load models
 # --------------------------------
 yolo_model = YOLO(YOLO_MODEL_PATH)
-ocr_model = load_model(CNN_MODEL_PATH)
+ocr_model = CNN_MODEL_PATH
 
 CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 char_to_int = {char: i for i, char in enumerate(CHARACTERS)}

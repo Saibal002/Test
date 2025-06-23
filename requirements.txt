@@ -1,11 +1,8 @@
 numpy<2.0.0
 opencv-python-headless
-
-torch
-ultralytics
-matplotlib
-Pillow
-
 streamlit
-
+ultralytics
 tensorflow==2.11.0
+Pillow
+matplotlib
+
