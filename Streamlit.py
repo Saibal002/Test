@@ -107,7 +107,7 @@ st.markdown("""
 # Config
 # --------------------------------
 YOLO_MODEL_PATH = "best.pt"
-CNN_MODEL_PATH = "ocr_model_kaggle.keras"
+CNN_MODEL_PATH = "ocr_model_kaggle_tf.keras"
 DETECTED_FOLDER = "detected_regions/"
 
 os.makedirs(DETECTED_FOLDER, exist_ok=True)
@@ -116,7 +116,7 @@ os.makedirs(DETECTED_FOLDER, exist_ok=True)
 # Load models
 # --------------------------------
 yolo_model = YOLO(YOLO_MODEL_PATH)
-ocr_model = CNN_MODEL_PATH
+ocr_model = load_model(CNN_MODEL_PATH)
 
 CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 char_to_int = {char: i for i, char in enumerate(CHARACTERS)}
@@ -341,7 +341,7 @@ def predict_plate(chars, bboxes, plate_img):
     prediction = ""
     debug_img = plate_img.copy()
     for char_img, bbox in zip(chars, bboxes):
-        # proc = pad_and_prepare(char_img)
+        proc = pad_and_prepare(char_img)
         pred = ocr_model.predict(char_img, verbose=0)
         label = int_to_char[np.argmax(pred)]
         prediction += label
