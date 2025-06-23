@@ -107,8 +107,8 @@ st.markdown("""
 # Config
 # --------------------------------
 YOLO_MODEL_PATH = "best.pt"
-CNN_MODEL_PATH = "cnn.keras"
-DETECTED_FOLDER = "D:\WORKSPACE\College Project\YOLO+CNN\detected_regions"
+CNN_MODEL_PATH = "ocr_model_kaggle.keras"
+DETECTED_FOLDER = "detected_regions/"
 
 os.makedirs(DETECTED_FOLDER, exist_ok=True)
 
