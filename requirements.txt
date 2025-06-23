@@ -5,4 +5,4 @@ ultralytics
 tensorflow==2.11.0
 Pillow
 matplotlib
-
+opencv-python-headless==4.11.0.86
