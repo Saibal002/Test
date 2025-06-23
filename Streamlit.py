@@ -341,8 +341,8 @@ def predict_plate(chars, bboxes, plate_img):
     prediction = ""
     debug_img = plate_img.copy()
     for char_img, bbox in zip(chars, bboxes):
-        proc = pad_and_prepare(char_img)
-        pred = ocr_model.predict(proc, verbose=0)
+        # proc = pad_and_prepare(char_img)
+        pred = ocr_model.predict(char_img, verbose=0)
         label = int_to_char[np.argmax(pred)]
         prediction += label
         x, y, w, h = bbox
